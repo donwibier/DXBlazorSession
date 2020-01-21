@@ -13,16 +13,6 @@ namespace DXBlazorDemo.Shared
 		[EmailAddress]
 		public string Email { get; set; }
 		[DateInPast]
-		public DateTime DayInPast { get; set; }
-	}
-
-
-	[AttributeUsage(AttributeTargets.Property | AttributeTargets.Field | AttributeTargets.Parameter, AllowMultiple = false)]
-	public class DateInPastAttribute : ValidationAttribute
-	{
-		public override bool IsValid(object value)
-		{
-			return (DateTime)value <= DateTime.Today && (DateTime)value > DateTime.MinValue;
-		}
+		public DateTime DayInPast { get; set; } = DateTime.Now;
 	}
 }

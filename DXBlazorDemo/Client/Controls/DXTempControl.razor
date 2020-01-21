@@ -1,0 +1,25 @@
+﻿@using DXBlazorDemo.Shared
+
+	<DxDataGrid Data="@Forecasts"
+				PageSize="5"
+				ShowFilterRow="false"
+				style="width:70%">
+		<DxDataGridDateEditColumn Field="@nameof(IWeatherForecast.Date)" DisplayFormatString="D" EditFormatString="D" />
+		<DxDataGridColumn Field="@nameof(IWeatherForecast.Summary)" Caption="Summary" Width="150px" />
+		<DxDataGridSpinEditColumn Field="@nameof(IWeatherForecast.TemperatureC)" Caption="@TemperatureTitle" TextAlignment="@DataGridTextAlign.Left" Width="150px">
+			<DisplayTemplate>
+				@PrintTemp((context as IWeatherForecast).TemperatureC)
+			</DisplayTemplate>
+		</DxDataGridSpinEditColumn>
+	</DxDataGrid>
+
+@code {
+	[Parameter]
+	public IWeatherForecast[] Forecasts { get; set; }
+
+	[Parameter]
+	public string TemperatureTitle { get; set; }
+
+	[Parameter]
+	public Func<int, int> PrintTemp { get; set; }
+}

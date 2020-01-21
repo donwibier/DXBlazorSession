@@ -9,9 +9,11 @@ namespace DXBlazorDemo.Client
     {
         public void ConfigureServices(IServiceCollection services)
         {
-			services.AddTransient<IFetchDataService, FetchDataService>();
+            services.AddDevExpressBlazor();
+            services.AddSingleton<IFetchDataService, FetchDataService>();
 
-			services.AddTransient<IFetchDataViewModel, FetchDataViewModel>();
+            services.AddTransient<ICounterViewModel, CounterViewModel>();
+            services.AddTransient<IFetchDataViewModel, FetchDataViewModel>();
 			services.AddTransient<IFormViewModel, FormViewModel>();
         }
 
