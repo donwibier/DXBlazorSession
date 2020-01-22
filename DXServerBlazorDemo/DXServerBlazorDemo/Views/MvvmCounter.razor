@@ -1,0 +1,13 @@
+﻿@page "/mvvmcounter"
+
+@inject ICounterViewModel ViewModel;
+
+<h1>Counter through MVVM</h1>
+
+<p>Current count: @ViewModel.CurrentCount</p>
+
+<button class="btn btn-primary" @onclick="ViewModel.IncrementCountAction">Click me</button>
+
+@code {
+
+}

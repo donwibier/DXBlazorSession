@@ -4,12 +4,6 @@ using System.Text;
 
 namespace DXBlazorDemo.Shared
 {
-	public interface IWeatherForecast
-	{
-		string Summary { get; set; }
-		int TemperatureC { get; set; }
-		DateTime Date { get; set; }
-	}
     public class WeatherForecast: IWeatherForecast
 	{
         public DateTime Date { get; set; }

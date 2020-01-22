@@ -1,0 +1,46 @@
+﻿@page "/form"
+@inject IFormViewModel viewModel
+
+
+
+<h1>Some Form</h1>
+<EditForm Model="@viewModel.Model" OnValidSubmit="@viewModel.SubmitAction" Context="EditFormContext">
+	<DataAnnotationsValidator />
+	<DxFormLayout>
+		<DxFormLayoutItem Caption="Name:" ColSpanMd="6">
+			<Template>
+				<DxTextBox @bind-Text="@viewModel.Model.Name" />
+			</Template>
+		</DxFormLayoutItem>
+		<DxFormLayoutItem Caption="Email:" ColSpanMd="6">
+			<Template>
+				<DxTextBox @bind-Text="@viewModel.Model.Email" />
+			</Template>
+		</DxFormLayoutItem>
+
+		<DxFormLayoutItem Caption="Production Date:" ColSpanMd="6">
+			<Template>
+				<DxDateEdit @bind-Date="@viewModel.Model.DayInPast" />
+			</Template>
+		</DxFormLayoutItem>
+		<DxFormLayoutItem Caption="&nbsp;" ColSpanMd="6">
+			<Template>
+				&nbsp;
+			</Template>
+		</DxFormLayoutItem>
+		<DxFormLayoutItem ColSpanMd="12">
+			<Template>
+				<ValidationSummary />
+			</Template>
+		</DxFormLayoutItem>
+		<DxFormLayoutItem ColSpanMd="12">
+			<Template>
+				<button type="submit">Submit</button>
+			</Template>
+		</DxFormLayoutItem>
+	</DxFormLayout>
+</EditForm>
+
+@code {
+
+}

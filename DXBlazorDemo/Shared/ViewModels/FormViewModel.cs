@@ -4,15 +4,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace DXBlazorDemo.Client.ViewModels
+namespace DXBlazorDemo.Shared.ViewModels
 {
-	public interface IFormViewModel
-	{
-		void SubmitAction();
-
-		FormModel Model { get; set; }
-	}
-
 	public class FormViewModel : IFormViewModel
 	{
 		public FormModel Model { get; set; } = new FormModel();

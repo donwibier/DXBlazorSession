@@ -8,6 +8,12 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DXBlazorDemo.Client", "Clie
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DXBlazorDemo.Shared", "Shared\DXBlazorDemo.Shared.csproj", "{E9994EE6-82F5-4AE1-85AF-CDF5AE519EA4}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DXServerBlazorDemo", "..\DXServerBlazorDemo\DXServerBlazorDemo\DXServerBlazorDemo.csproj", "{C666E2D9-BBED-4199-89C4-696E3766694F}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Blazor WASM", "Blazor WASM", "{A1751C56-A0B2-4428-8EC9-856EFC1E227A}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Blazor Server", "Blazor Server", "{DEFBDEFA-E1BC-4BED-A900-1100A6A31057}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -54,9 +60,27 @@ Global
 		{E9994EE6-82F5-4AE1-85AF-CDF5AE519EA4}.Release|x64.Build.0 = Release|Any CPU
 		{E9994EE6-82F5-4AE1-85AF-CDF5AE519EA4}.Release|x86.ActiveCfg = Release|Any CPU
 		{E9994EE6-82F5-4AE1-85AF-CDF5AE519EA4}.Release|x86.Build.0 = Release|Any CPU
+		{C666E2D9-BBED-4199-89C4-696E3766694F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C666E2D9-BBED-4199-89C4-696E3766694F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C666E2D9-BBED-4199-89C4-696E3766694F}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{C666E2D9-BBED-4199-89C4-696E3766694F}.Debug|x64.Build.0 = Debug|Any CPU
+		{C666E2D9-BBED-4199-89C4-696E3766694F}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{C666E2D9-BBED-4199-89C4-696E3766694F}.Debug|x86.Build.0 = Debug|Any CPU
+		{C666E2D9-BBED-4199-89C4-696E3766694F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C666E2D9-BBED-4199-89C4-696E3766694F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C666E2D9-BBED-4199-89C4-696E3766694F}.Release|x64.ActiveCfg = Release|Any CPU
+		{C666E2D9-BBED-4199-89C4-696E3766694F}.Release|x64.Build.0 = Release|Any CPU
+		{C666E2D9-BBED-4199-89C4-696E3766694F}.Release|x86.ActiveCfg = Release|Any CPU
+		{C666E2D9-BBED-4199-89C4-696E3766694F}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{61F7DEB4-B40F-435F-BDE1-A625AB8B6BAC} = {A1751C56-A0B2-4428-8EC9-856EFC1E227A}
+		{CAE7F53F-AF7D-4A7E-A815-CC5C183C3287} = {A1751C56-A0B2-4428-8EC9-856EFC1E227A}
+		{E9994EE6-82F5-4AE1-85AF-CDF5AE519EA4} = {A1751C56-A0B2-4428-8EC9-856EFC1E227A}
+		{C666E2D9-BBED-4199-89C4-696E3766694F} = {DEFBDEFA-E1BC-4BED-A900-1100A6A31057}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {BBA5262F-99E5-4FC8-923D-44ACA568E0B9}

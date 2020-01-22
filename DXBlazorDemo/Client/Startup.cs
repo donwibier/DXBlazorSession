@@ -1,5 +1,6 @@
 using DXBlazorDemo.Client.Services;
-using DXBlazorDemo.Client.ViewModels;
+using DXBlazorDemo.Shared;
+using DXBlazorDemo.Shared.ViewModels;
 using Microsoft.AspNetCore.Components.Builder;
 using Microsoft.Extensions.DependencyInjection;
 

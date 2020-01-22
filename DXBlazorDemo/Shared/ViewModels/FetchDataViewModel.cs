@@ -1,25 +1,11 @@
-﻿using DXBlazorDemo.Client.Services;
-using DXBlazorDemo.Shared;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using DXBlazorDemo.Shared;
 
-namespace DXBlazorDemo.Client.ViewModels
+namespace DXBlazorDemo.Shared.ViewModels
 {
-	public interface IFetchDataViewModel
-	{		
-		int PrintTemperature(int t);
-
-		string OtherTempScale { get; }
-		string TempTitle { get; }
-
-		void ToggleScaleAction();
-		Task RetrieveDataAsync();
-
-		IWeatherForecast[] Forecasts { get; }
-	}
-
 	public class FetchDataViewModel: IFetchDataViewModel
 	{
 		private bool dispFahr;
@@ -43,7 +29,7 @@ namespace DXBlazorDemo.Client.ViewModels
 		{
 			dispFahr = !dispFahr;
 		}
-
+		public bool IsFahrenheit { get => dispFahr; }
 		public string TempTitle { get => dispFahr ? "F" : "C"; }
 		public string OtherTempScale { get => !dispFahr ? "Fahrenheit" : "Celsius"; }
 		public int PrintTemperature(int t)
