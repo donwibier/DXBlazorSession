@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 namespace DXBlazorDemo.Client.ViewModels
 {
 	public interface IFetchDataViewModel
-	{
+	{		
 		int PrintTemperature(int t);
 
 		string OtherTempScale { get; }

@@ -12,8 +12,9 @@ else
 	<button class="btn btn-primary" 
 			@onclick=@viewModel.ToggleScaleAction>Display @viewModel.OtherTempScale</button>
 	<br/>
+	<br/>
 
-	@*<TemperatureControl Forecasts="@viewModel.Forecasts" TemperatureTitle="@viewModel.TempTitle" PrintTemp="@viewModel.PrintTemperature" />*@
+	<TemperatureControl Forecasts="@viewModel.Forecasts" TemperatureTitle="@viewModel.TempTitle" PrintTemp="@viewModel.PrintTemperature" />
 	<DXTempControl Forecasts="@viewModel.Forecasts" TemperatureTitle="@viewModel.TempTitle" PrintTemp="@viewModel.PrintTemperature" />
 }
 
@@ -23,5 +24,6 @@ else
 	{
 		await viewModel.RetrieveDataAsync();
 	}
+
 
 }

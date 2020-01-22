@@ -5,12 +5,12 @@
 				ShowFilterRow="false"
 				style="width:70%">
 		<DxDataGridDateEditColumn Field="@nameof(IWeatherForecast.Date)" DisplayFormatString="D" EditFormatString="D" />
-		<DxDataGridColumn Field="@nameof(IWeatherForecast.Summary)" Caption="Summary" Width="150px" />
 		<DxDataGridSpinEditColumn Field="@nameof(IWeatherForecast.TemperatureC)" Caption="@TemperatureTitle" TextAlignment="@DataGridTextAlign.Left" Width="150px">
 			<DisplayTemplate>
 				@PrintTemp((context as IWeatherForecast).TemperatureC)
 			</DisplayTemplate>
 		</DxDataGridSpinEditColumn>
+		<DxDataGridColumn Field="@nameof(IWeatherForecast.Summary)" Caption="Summary" Width="150px" />
 	</DxDataGrid>
 
 @code {

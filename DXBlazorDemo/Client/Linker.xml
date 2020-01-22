@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<!--
+  This file specifies which parts of the BCL or Blazor packages must not be
+  stripped by the IL Linker even if they aren't referenced by user code.
+-->
+<linker>
+	<assembly fullname="mscorlib">
+		<!--
+      Preserve the methods in WasmRuntime because its methods are called by 
+      JavaScript client-side code to implement timers.
+      Fixes: https://github.com/dotnet/blazor/issues/239
+    -->
+		<type fullname="System.Threading.WasmRuntime" />
+	</assembly>
+	<assembly fullname="System.Core">
+		<!--
+      System.Linq.Expressions* is required by Json.NET and any 
+      expression.Compile caller. The assembly isn't stripped.
+    -->
+		<type fullname="System.Linq.Expressions*" />
+		<type fullname="System.Linq.Queryable*" />
+		<type fullname="System.Linq.Enumerable*" />
+		<type fullname="System.Linq.EnumerableRewriter*" />
+	</assembly>
+	<assembly fullname="System">
+		<!--Use this line to include the entire assembly.-->
+		<type fullname="System.ComponentModel*" />
+		<!--Uncomment the following lines to include individual types. -->
+		<type fullname="System.ComponentModel.Int32Converter*" />
+		<type fullname="System.ComponentModel.BooleanConverter*" />
+		<type fullname="System.ComponentModel.DateTimeConverter*" />
+		<type fullname="System.ComponentModel.StringConverter*" />		
+	</assembly>
+	<!--
+    In this example, the app's entry point assembly is listed. The assembly
+    isn't stripped by the IL Linker.
+  -->
+	<assembly fullname="DXBlazorDemo.Client" />
+</linker>
