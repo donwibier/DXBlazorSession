@@ -28,7 +28,7 @@ namespace DXBlazorDemo.Shared.ViewModels
 
 	public interface IFormViewModel
 	{
-		void SubmitAction();
+		Task SubmitAction();
 		FormModel Model { get; set; }
 	}
 }

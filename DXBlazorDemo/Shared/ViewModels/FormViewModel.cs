@@ -8,11 +8,17 @@ namespace DXBlazorDemo.Shared.ViewModels
 {
 	public class FormViewModel : IFormViewModel
 	{
+		readonly IFormService formService;
+		public FormViewModel(IFormService formService)
+		{
+			this.formService = formService;
+		}
 		public FormModel Model { get; set; } = new FormModel();
 
-		public void SubmitAction()
+		public async Task SubmitAction()
 		{
 			Console.WriteLine("You clicked submit");
+			var result = await formService.SubmitAsync(this.Model);
 		}
 	}
 }

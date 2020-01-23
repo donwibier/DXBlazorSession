@@ -31,6 +31,7 @@ namespace DXServerBlazorDemo
 			services.AddRazorPages();
 			services.AddServerSideBlazor();			
 			services.AddSingleton<IFetchDataService, FetchDataService>();
+			services.AddSingleton<IFormService, FormService>();
 
 			services.AddTransient<ICounterViewModel, CounterViewModel>();
 			services.AddTransient<IFetchDataViewModel, FetchDataViewModel>();

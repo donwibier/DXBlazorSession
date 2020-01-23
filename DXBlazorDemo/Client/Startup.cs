@@ -12,6 +12,7 @@ namespace DXBlazorDemo.Client
         {
             services.AddDevExpressBlazor();
             services.AddSingleton<IFetchDataService, FetchDataService>();
+            services.AddSingleton<IFormService, FormService>();
 
             services.AddTransient<ICounterViewModel, CounterViewModel>();
             services.AddTransient<IFetchDataViewModel, FetchDataViewModel>();

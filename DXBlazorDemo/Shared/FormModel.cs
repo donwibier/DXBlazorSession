@@ -15,4 +15,12 @@ namespace DXBlazorDemo.Shared
 		[DateInPast]
 		public DateTime DayInPast { get; set; } = DateTime.Now;
 	}
+
+	public class FormResponse : IFormResponse
+	{
+		public bool Success { get; set; }
+		public string Errors { get; set; }
+
+		public FormModel Result { get; set; }
+	}
 }
