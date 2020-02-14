@@ -1,7 +1,7 @@
 ﻿@using DXBlazorDemo.Shared
 
 	<DxDataGrid @key="@GridKey" Data="@Forecasts"
-				PageSize="5"
+				ShowPager="false"
 				ShowFilterRow="false"
 				style="width:70%">
 		<DxDataGridDateEditColumn Field="@nameof(IWeatherForecast.Date)" DisplayFormatString="D" EditFormatString="D" />

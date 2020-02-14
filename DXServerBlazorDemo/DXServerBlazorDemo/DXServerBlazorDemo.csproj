@@ -9,10 +9,12 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\..\DXBlazorDemo\Client\DXBlazorDemo.Client.csproj" />
     <ProjectReference Include="..\..\DXBlazorDemo\Shared\DXBlazorDemo.Shared.csproj" />
   </ItemGroup>
 
   <ItemGroup>
+    <Folder Include="Controls\" />
     <Folder Include="ViewModels\" />
   </ItemGroup>
 
