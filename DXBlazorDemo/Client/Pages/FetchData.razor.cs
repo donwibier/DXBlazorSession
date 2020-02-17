@@ -11,13 +11,14 @@ namespace DXBlazorDemo.Client.Pages
 	public partial class FetchData
 	{
 		[Inject]
-		public HttpClient Http { get; set; }
+		public IFetchDataService DataSvc { get; set; }
 		
-		private WeatherForecast[] forecasts;
+		private IWeatherForecast[] forecasts;
 
 		protected override async Task OnInitializedAsync()
 		{
-			forecasts = await Http.GetJsonAsync<WeatherForecast[]>("WeatherForecast");
+			forecasts = await DataSvc.GetDataAsync();
+				
 		}
 	}
 }
