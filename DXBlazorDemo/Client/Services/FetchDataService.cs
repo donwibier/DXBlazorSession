@@ -8,21 +8,19 @@ using System.Threading.Tasks;
 
 namespace DXBlazorDemo.Client.Services
 {
+	//.bl201
 	public class FetchDataService : IFetchDataService
 	{
-		readonly HttpClient http;
-
+		private readonly HttpClient http;
 		public FetchDataService(HttpClient http)
 		{
 			this.http = http;
 		}
-		
 		public async Task<IWeatherForecast[]> GetDataAsync()
 		{
 			Console.WriteLine("Getting Data");
-			var result =  await http.GetJsonAsync<WeatherForecast[]>("WeatherForecast");
+			var result = await http.GetJsonAsync<WeatherForecast[]>("WeatherForecast");
 			return result;
 		}
-
 	}
 }

@@ -6,36 +6,32 @@ using DXBlazorDemo.Shared;
 
 namespace DXBlazorDemo.Shared.ViewModels
 {
-	public class FetchDataViewModel: IFetchDataViewModel
+	//.bl100
+	public class FetchDataViewModel : IFetchDataViewModel
 	{
-		private bool dispFahr;
+		private readonly IFetchDataService dataService;
 
-		readonly IFetchDataService dataService;
 		public FetchDataViewModel(IFetchDataService dataService)
 		{
-			Console.WriteLine("FetchDataViewModel Constructor Executing");
 			this.dataService = dataService;
-			dispFahr = true;
+			IsFahrenheit = true;
 		}
 
 		public IWeatherForecast[] Forecasts { get; private set; }
-
+		public bool IsFahrenheit { get; private set; }
+		public string TempTitle { get => IsFahrenheit ? "F" : "C"; }
+		public string OtherTempScale { get => !IsFahrenheit ? "Fahrenheit" : "Celsius"; }
 		public async Task RetrieveDataAsync()
 		{
-			Forecasts =  await dataService.GetDataAsync();
-			
+			Forecasts = await dataService.GetDataAsync();
 		}
 		public void ToggleScaleAction()
 		{
-			dispFahr = !dispFahr;
+			IsFahrenheit = !IsFahrenheit;
 		}
-		public bool IsFahrenheit { get => dispFahr; }
-		public string TempTitle { get => dispFahr ? "F" : "C"; }
-		public string OtherTempScale { get => !dispFahr ? "Fahrenheit" : "Celsius"; }
 		public int PrintTemperature(int t)
 		{
-			return dispFahr ? 32 + (int)(t / 0.5556) : t;
-		} 
-
+			return IsFahrenheit ? 32 + (int)(t / 0.5556) : t;
+		}
 	}
 }

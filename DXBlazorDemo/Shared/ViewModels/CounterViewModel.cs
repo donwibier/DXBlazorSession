@@ -5,7 +5,8 @@ using System.Threading.Tasks;
 
 namespace DXBlazorDemo.Shared.ViewModels
 {
-	public class CounterViewModel: ICounterViewModel
+	//.bl0
+	public class CounterViewModel : ICounterViewModel
 	{
 		public CounterViewModel()
 		{
@@ -19,4 +20,5 @@ namespace DXBlazorDemo.Shared.ViewModels
 			CurrentCount++;
 		}
 	}
+
 }
